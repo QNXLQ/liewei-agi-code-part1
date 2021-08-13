@@ -6,7 +6,7 @@ class MNIST_dataset(Dataset):
     #初始化数据集
     def __init__(self, root, istrain=True):
         self.dataset = []
-        self.sub_dir = "TRAIN" if is train else "TEST"
+        self.sub_dir = "TRAIN" if istrain else "TEST"
         for tag in os.listdir(f"{root}/{self.sub_dir}"):
             img_dir = f"{root}/{self.sub_dir}/{tag}"
             for img_filename in os.listdir(img_dir):
